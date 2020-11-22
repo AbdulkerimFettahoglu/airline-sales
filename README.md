@@ -45,7 +45,7 @@ Replace KEYWORD tag with anything you want.
 {
     "name": "flight1",
     "capacity": 10,
-    "departure": "22-11-2020 23:12",
+    "departure": "22-11-2021 23:12",
     "basePrice": 100.0,
     "routeId": 1,
     "airlineId": 1
@@ -69,3 +69,12 @@ Web service will return ticket id and another informations.
 Replace INDEX tag with a number.
 ### Delete Ticket (endpoint (DELETE): ticket/delete/INDEX)
 Replace INDEX tag with a ticket number.
+# DEMO
+If you'd like to see some demo data. Call following endpoints as ordered. You can call multiple times latest one.
+
+Order | Endpoints
+------------ | -------------
+1 | localhost:8080/fill/withData
+2 | localhost:8080/fill/withRoute
+3 | localhost:8080/fill/withFlights
+4 | localhost:8080/fill/withTickets
