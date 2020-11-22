@@ -26,19 +26,19 @@ public class TicketController {
 	
     @GetMapping()
     @RequestMapping("/get/{id}")
-    public ResponseEntity<Ticket> getProject(@PathVariable("id") Integer id) {
+    public ResponseEntity<Ticket> get(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(ticketService.get(id));
     }
     
     @PostMapping()
     @RequestMapping("/save")
-    public ResponseEntity<Ticket> saveProject(@RequestBody Ticket ticket) {
+    public ResponseEntity<Ticket> save(@RequestBody Ticket ticket) {
         return ResponseEntity.ok(ticketService.save(ticket));
     }
     
     @PostMapping()
     @RequestMapping("/delete/{id}")
-    public ResponseEntity<Boolean> deleteProject(@PathVariable Integer id) {
+    public ResponseEntity<Boolean> delete(@PathVariable Integer id) {
         boolean result = ticketService.delete(id);
         return ResponseEntity.ok(result);
     }

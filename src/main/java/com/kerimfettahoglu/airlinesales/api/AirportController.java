@@ -26,19 +26,19 @@ public class AirportController {
 	
     @GetMapping()
     @RequestMapping("/get/{id}")
-    public ResponseEntity<Airport> getProject(@PathVariable("id") Integer id) {
+    public ResponseEntity<Airport> get(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(airportService.get(id));
     }
     
     @PostMapping()
     @RequestMapping("/save")
-    public ResponseEntity<Airport> saveProject(@RequestBody Airport airport) {
+    public ResponseEntity<Airport> save(@RequestBody Airport airport) {
         return ResponseEntity.ok(airportService.save(airport));
     }
     
     @PostMapping()
     @RequestMapping("/delete/{id}")
-    public ResponseEntity<Boolean> deleteProject(@PathVariable Integer id) {
+    public ResponseEntity<Boolean> delete(@PathVariable Integer id) {
         boolean result = airportService.delete(id);
         return ResponseEntity.ok(result);
     }

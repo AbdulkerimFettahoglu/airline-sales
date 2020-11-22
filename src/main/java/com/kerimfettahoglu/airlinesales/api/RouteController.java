@@ -26,19 +26,19 @@ public class RouteController {
 	
     @GetMapping()
     @RequestMapping("/get/{id}")
-    public ResponseEntity<Route> getProject(@PathVariable("id") Integer id) {
+    public ResponseEntity<Route> get(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(routeService.get(id));
     }
     
     @PostMapping()
     @RequestMapping("/save")
-    public ResponseEntity<Route> saveProject(@RequestBody AddRouteInput route) {
+    public ResponseEntity<Route> save(@RequestBody AddRouteInput route) {
         return ResponseEntity.ok(routeService.save(route));
     }
     
     @PostMapping()
     @RequestMapping("/delete/{id}")
-    public ResponseEntity<Boolean> deleteProject(@PathVariable Integer id) {
+    public ResponseEntity<Boolean> delete(@PathVariable Integer id) {
         boolean result = routeService.delete(id);
         return ResponseEntity.ok(result);
     }

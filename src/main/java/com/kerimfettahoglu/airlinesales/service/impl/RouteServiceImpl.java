@@ -33,7 +33,7 @@ public class RouteServiceImpl implements RouteService {
 		route.setFrom(fromPort.get());
 		route.setTo(toPort.get());
 		route.setName(input.getName());
-		return routeRepo.save(new Route());
+		return routeRepo.save(route);
 	}
 	
 	@Override

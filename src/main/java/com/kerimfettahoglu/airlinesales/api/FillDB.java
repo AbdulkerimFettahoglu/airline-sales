@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kerimfettahoglu.airlinesales.dto.AddTicketInput;
 import com.kerimfettahoglu.airlinesales.entity.Airline;
 import com.kerimfettahoglu.airlinesales.entity.Airport;
 import com.kerimfettahoglu.airlinesales.entity.Flight;
@@ -78,7 +79,7 @@ public class FillDB {
 	}
 	
 	@GetMapping
-	@RequestMapping("/withRoute")
+	@RequestMapping("/withRoutes")
 	@Transactional
 	public boolean fillRoute() {
 		Airline airline1 = airlineServiceImpl.get(1);
@@ -139,12 +140,10 @@ public class FillDB {
 	public boolean fillTickets() {
 		Flight saw_ist = flightServiceImpl.get(1);
 		Flight ber_ham = flightServiceImpl.get(2);
-		Ticket saw_ist_t1 = new Ticket();
-		Ticket ber_ham_t1 = new Ticket();
-		saw_ist_t1.setCreditCard("credit1");
-		saw_ist_t1.setFlight(saw_ist);
-		saw_ist_t1.setStatus(true);
-		
+		AddTicketInput saw_ist_t1 = new AddTicketInput();
+		saw_ist_t1.setCreditCard("1234123412341234");
+		saw_ist_t1.setFlightId(saw_ist.getId());
+		ticketServiceImpl.sellTicket(saw_ist_t1);
 		return true;
 	}
 }

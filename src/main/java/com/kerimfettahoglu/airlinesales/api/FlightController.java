@@ -26,19 +26,19 @@ public class FlightController {
 	
     @GetMapping()
     @RequestMapping("/get/{id}")
-    public ResponseEntity<Flight> getProject(@PathVariable("id") Integer id) {
+    public ResponseEntity<Flight> get(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(flightService.get(id));
     }
     
     @PostMapping()
     @RequestMapping("/save")
-    public ResponseEntity<Flight> saveProject(@RequestBody AddFlightInput flight) {
+    public ResponseEntity<Flight> save(@RequestBody AddFlightInput flight) {
         return ResponseEntity.ok(flightService.save(flight));
     }
     
     @PostMapping()
     @RequestMapping("/delete/{id}")
-    public ResponseEntity<Boolean> deleteProject(@PathVariable Integer id) {
+    public ResponseEntity<Boolean> delete(@PathVariable Integer id) {
         boolean result = flightService.delete(id);
         return ResponseEntity.ok(result);
     }

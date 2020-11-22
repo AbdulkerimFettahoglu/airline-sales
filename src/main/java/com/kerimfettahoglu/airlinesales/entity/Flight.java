@@ -33,7 +33,7 @@ public class Flight {
 	@Column
 	private Integer capacity;
 	@Column
-	private Integer soldTicket;
+	private Integer soldTicket = 0;
 	@Column
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm")
 	private Date departure;
